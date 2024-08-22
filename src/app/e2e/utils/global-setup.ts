@@ -3,7 +3,7 @@ import { chromium, FullConfig, Page } from '@playwright/test';
 const user_email = 'balajibalaji.tirupathi@toverto.com' || '';
 const user_password = "Toverto@2023" || '';
 
-const placeholders = ['someone@example.com', 'Email, phone, or Skype', 'someone@example.com'];
+const placeholders = ['someone@example.com', 'Email, phone, or Skype', 'Email address or phone number'];
 
 async function waitForInputField(page: Page, placeholders: string[], timeout = 60000) {
   for (const placeholder of placeholders) {
