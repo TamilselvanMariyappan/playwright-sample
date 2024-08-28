@@ -1,13 +1,17 @@
 export const environment = {
-    production: false,
-    firebaseConfig: {
-      apiKey: 'AIzaSyCHuvubRFrkMY1s861Pmwu4AeOkWtcPym4',
-      authDomain: 'playwright-6fee2.firebaseapp.com',
-      projectId: 'playwright-6fee2',
-      storageBucket: 'playwright-6fee2.appspot.com',
-      messagingSenderId: '32793228298',
-      appId: '1:32793228298:web:f184e3663fde8d45e79bf3',
-      measurementId: 'G-GLG34JE4TM',
-    },
-  };
-  
+  production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyA3xiDjPYHO_U94zzJM4S3Y20z3hhGBa0Q',
+    authDomain: 'loyaltyhubdev.firebaseapp.com',
+    projectId: 'loyaltyhubdev',
+    storageBucket: 'loyaltyhubdev.appspot.com',
+    messagingSenderId: '2474562257',
+    appId: '1:2474562257:web:65485f492c872147a5ebf0',
+    measurementId: 'G-Z0EK4KBS38',
+  },
+  recaptchaSiteId: '6Le7DnonAAAAAFvD0SWrcnN3_4Iza_OcdAUYLcFG',
+  appCheckDebugFlag: false,
+  apiUrl: 'https://dev.api.landrysloyalty.com/api',
+  tenantId: '62b81786-7c68-42ea-8a28-f0f614207729',
+  baseURL: 'https://tst.web.landrysloyalty.com',
+};

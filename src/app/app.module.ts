@@ -2,14 +2,27 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { provideAuth, getAuth } from '@angular/fire/auth';
+ 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
 import { environment } from './environments/enviroment';
-import { getApp, initializeApp, provideFirebaseApp } from '@angular/fire/app';
+ 
 
+// Firebase
+import { provideFirebaseApp, initializeApp, getApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideAnalytics, getAnalytics } from '@angular/fire/analytics';
+import {
+  ReCaptchaEnterpriseProvider,
+  initializeAppCheck,
+  provideAppCheck,
+} from '@angular/fire/app-check';
+
+// To setup the Appcheck Debug to False. By default it will take true
+(<any>window).FIREBASE_APPCHECK_DEBUG_TOKEN = environment.appCheckDebugFlag;
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,8 +31,20 @@ import { getApp, initializeApp, provideFirebaseApp } from '@angular/fire/app';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    provideAuth(() => getAuth(getApp())),
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+
+     //FIREBASE
+     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+     provideAuth(() => getAuth(getApp())),
+     provideFirestore(() => getFirestore(getApp())),
+     provideAnalytics(() => getAnalytics()),
+
+     provideAppCheck(() =>
+      initializeAppCheck(getApp(), {
+        provider: new ReCaptchaEnterpriseProvider('6Le7DnonAAAAAFvD0SWrcnN3_4Iza_OcdAUYLcFG'),
+        isTokenAutoRefreshEnabled: true,
+      })
+    ),
+
     AngularFireAuthModule,
   ],
   providers: [
