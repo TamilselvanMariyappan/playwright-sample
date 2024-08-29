@@ -1,7 +1,7 @@
 import { test, expect, Page, BrowserContext } from '@playwright/test';
 
-const user_email = 'balaji.tirupathi@toverto.com';
-const user_password = 'Toverto@2023';
+const user_email = 'landrystest@serverless-solutions.com';
+const user_password = 'Z*893493286616ak';
 
 async function waitForInputFieldByType(page: Page, type: string, timeout = 60000) {
   try {

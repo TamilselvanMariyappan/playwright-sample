@@ -7,7 +7,7 @@ export default defineConfig({
   use: {
     trace: 'on-first-retry',
     baseURL: 'http://localhost:4200',
-    headless: true,  // Enable headless mode
+    headless: false,  // Enable headless mode
   },
   projects: [
     {
